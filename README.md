@@ -1,51 +1,72 @@
-# Welcome to your Expo app 👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+# My Run App
 
-## Get started
+A modern social running app built with React Native and Expo. My Run App allows users to sign up, log in, create posts, edit their profiles, and interact with a running community. The backend is powered by Supabase for authentication and data storage.
 
-1. Install dependencies
+## Features
 
-   ```bash
-   npm install
+- User authentication (sign up, login, logout)
+- Create, edit, and delete posts
+- User profiles with editable information
+- Notifications
+- Rich text editor for posts
+- Responsive and modern UI
+
+## Tech Stack
+
+- **Frontend:** React Native, Expo
+- **Backend:** Supabase
+- **State Management:** React Context
+- **Styling:** Custom themes
+
+## Installation
+
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/liam-barry/my-run-app.git
+   cd my-run-app
    ```
-
-2. Start the app
-
-   ```bash
+2. **Install dependencies:**
+   ```sh
+   npm install
+   # or
+   yarn install
+   ```
+3. **Set up environment variables:**
+   - Copy your Supabase credentials to the appropriate config file (see `lib/supabase.js`).
+4. **Start the Expo app:**
+   ```sh
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+## Folder Structure
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+app/            # Main app screens and navigation
+assets/         # Fonts, icons, and images
+components/     # Reusable UI components
+constants/      # Theme and global constants
+contexts/       # React Context providers (e.g., Auth)
+helpers/        # Utility functions
+lib/            # Supabase client setup
+services/       # API and business logic
+scripts/        # Project scripts
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Usage
 
-## Learn more
+- Run the app on your device using the Expo Go app or an emulator.
+- Sign up for a new account or log in.
+- Create and interact with posts, edit your profile, and explore the community features.
 
-To learn more about developing your project with Expo, look at the following resources:
+## Contributing
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
-## Join the community
+## License
 
-Join our community of developers creating universal apps.
+[MIT](LICENSE)
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
-# my-run-app
+---
+
+**Made with ❤️ by Liam Barry**
