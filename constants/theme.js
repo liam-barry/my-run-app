@@ -13,15 +13,18 @@ export const theme = {
     dark: '#1a1a1a',              // general dark
     darkLight: '#2f2f2f',         // lighter dark
     gray: '#bcbcbc',              // neutral gray
-    grayLight: '#e1e1e1',         // very light gray
+    grayLight: '#e1e1e1',
+    
+    bloodRed: '#FF2400',
 
     text: '#494949',              // default text
     textLight: '#7c7c7c',         // secondary text
     textDark: '#1d1d1d',
     textOrange: '#FE982A',        // title text
-    textWhite: '#e2e2e2', 
+    textWhite: '#e2e2e2',          // shadow color 
     
-    defaultBackgroundDark: '#36393f'// white text
+    defaultBackgroundDark: '#36393f',// white text
+    tabBarBackground: '#45474f', // slightly lighter gray
   },
 
   fonts: {

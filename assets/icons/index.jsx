@@ -22,12 +22,14 @@ import Delete from './Delete';
 import Logout from './logout';
 import Image from './Image';
 import Video from './Video';
+import Runner from './Runner';
 
 const icons = {
     home: Home,
     mail: Mail,
     lock: Lock,
     user: User,
+    runner: Runner,
     heart: Heart,
     plus: Plus,
     search: Search,

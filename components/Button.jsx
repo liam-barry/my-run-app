@@ -9,7 +9,7 @@ const Button = ({
     ButtonStyle,
     TextStyle,
     title='',
-    onpress=()=>{},
+    onPress=()=>{},
     loading=false,
     hasShadow=true
 }) => {
@@ -33,7 +33,7 @@ const Button = ({
 
 
   return (
-    <Pressable onPress = {onpress} style={[styles.button, ButtonStyle, hasShadow && shadowStyle]}>
+    <Pressable onPress = {onPress} style={[styles.button, ButtonStyle, hasShadow && shadowStyle]}>
       <Text style={[styles.text, TextStyle]}>{title}</Text>
     </Pressable>
   )

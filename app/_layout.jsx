@@ -1,15 +1,57 @@
 import { View, Text } from 'react-native'
-import React from 'react'
-import { Stack } from 'expo-router'
+import React, { useEffect } from 'react'
+import { Stack, useRouter } from 'expo-router'
+import { AuthProvider, useAuth } from '../contexts/AuthContexts'
+import { supabase } from '../lib/supabase'
+import { getUserData } from '../services/userservice'
+import { setUserData } from '../contexts/AuthContexts'
 
 const _layout = () => {
   return (
-    <Stack 
+    <AuthProvider>
+      <MainLayout />
+    </AuthProvider>
+  )
+}
+
+const MainLayout = () => {
+  const { setAuth, setUserData } = useAuth();
+  const router = useRouter();
+
+  // Define updateUserData BEFORE useEffect so it's available
+  const updateUserData = async (user, email) => {
+    let res = await getUserData(user?.id);
+    if(res.success) setUserData({...res.data, email});
+  }
+
+  useEffect(() => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+     // console.log('session user: ', session?.user?.id);
+
+      if (session) {
+        setAuth(session?.user);
+        updateUserData(session?.user, session?.user?.email);{/* user name and address */}
+       // console.log('Auth user: ', session?.user?.email);
+        router.replace('/home');
+      } else {
+        setAuth(null);
+        router.replace('/welcome');
+      }
+    });
+
+    // Cleanup subscription on unmount
+    return () => {
+      subscription.unsubscribe();
+    };
+  }, []);
+
+  return (
+    <Stack
       screenOptions={{
         headerShown: false
       }}
     />
-  )
-}
+  );
+};
 
 export default _layout
